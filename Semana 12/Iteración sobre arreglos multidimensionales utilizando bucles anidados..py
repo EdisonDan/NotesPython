@@ -119,10 +119,10 @@ temperaturas = [
         ]
     ]
 ]
-# Iterar sobre la matriz para calcular los promedios
-for ciudad, nombre_ciudad in zip(temperaturas, ciudades):
-    print(f"\nTemperaturas para {nombre_ciudad}:")
-    for semana_num, semana in enumerate(ciudad):
-        total_temperaturas = sum(dia['temp']for dia in semana)
-        promedio = total_temperaturas / len(semana)
-        print(f"  Semana {semana_num}: Promedio = {promedio:.2f} °C")
+# Calcular el promedio de temperaturas para cada ciudad y semana
+for ciudad in temperaturas:
+    for semana in ciudad:
+        suma = 0
+        for dia in semana:
+            suma += dia['temp']
+        print(suma)
